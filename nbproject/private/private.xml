@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/agromercado/themes/hebo/views/layouts/tpl_navigation.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/components/UserIdentity.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/ProductoController.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/ValoralizacionCompraController.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/ValoralizacionProductoController.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/ImagenProductoController.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/CompraController.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/CategoriaController.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/TipoUsuarioController.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/ComunaController.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/UsuarioController.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/DetalleCompraController.php</file>
+        </group>
+    </open-files>
+</project-private>
