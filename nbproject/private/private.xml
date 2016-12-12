@@ -3,18 +3,45 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/agromercado/themes/hebo/views/layouts/tpl_navigation.php</file>
-            <file>file:/C:/xampp/htdocs/agromercado/protected/components/UserIdentity.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/views/valoralizacionCompra/create.php</file>
             <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/ProductoController.php</file>
-            <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/ValoralizacionCompraController.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/views/compra/detallecompra.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/views/valoralizacionCompra/_form.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/models/Compra.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/TipoUsuarioController.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/views/usuario/_form.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/views/valoralizacionProducto/create.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/views/producto/detallecarro.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/UsuarioController.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/themes/hebo/views/layouts/navigation.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/themes/hebo/views/layouts/tpl_sidebar.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/views/producto/indexfiltro.php</file>
             <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/ValoralizacionProductoController.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/views/site/login.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/models/ValoralizacionCompra.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/components/UserIdentity.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/themes/hebo/views/layouts/tpl_header.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/views/layouts/main.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/ValoralizacionCompraController.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/views/site/index.php</file>
             <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/ImagenProductoController.php</file>
             <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/CompraController.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/models/ValoralizacionProducto.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/views/valoralizacionProducto/valorizacionporproducto.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/models/DetalleCompra.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/themes/hebo/views/layouts/tpl_navigation.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/views/producto/index2.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/themes/hebo/views/layouts/column2.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/models/Producto.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/themes/hebo/views/layouts/column1.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/config/main.php</file>
             <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/CategoriaController.php</file>
-            <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/TipoUsuarioController.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/views/compra/miscompras.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/components/Controller.php</file>
             <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/ComunaController.php</file>
-            <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/UsuarioController.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/protected/views/valoralizacionProducto/_form.php</file>
             <file>file:/C:/xampp/htdocs/agromercado/protected/controllers/DetalleCompraController.php</file>
+            <file>file:/C:/xampp/htdocs/agromercado/themes/hebo/views/layouts/403.php</file>
         </group>
     </open-files>
 </project-private>

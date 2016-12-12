@@ -55,7 +55,10 @@
 		<?php echo $form->label($model,'id_comuna'); ?>
 		<?php echo $form->textField($model,'id_comuna'); ?>
 	</div>
-
+        <div class="row">
+		<?php echo $form->label($model,'id_estado'); ?>
+		<?php echo $form->textField($model,'id_estado'); ?>
+	</div>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

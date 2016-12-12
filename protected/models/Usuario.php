@@ -39,7 +39,7 @@ class Usuario extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('username, password, rut, nombre_completo, email, telefono, direccion, id_tipo_usuario, id_comuna', 'required'),
-			array('id_tipo_usuario, id_comuna', 'numerical', 'integerOnly'=>true),
+			array('id_tipo_usuario, id_comuna,id_estado', 'numerical', 'integerOnly'=>true),
 			array('username, password', 'length', 'max'=>128),
 			array('rut','length', 'max'=>20),
 			array('telefono', 'length', 'max'=>10),
@@ -48,7 +48,7 @@ class Usuario extends CActiveRecord
 			array('direccion', 'length', 'max'=>80),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_usuario, username, password, rut, nombre_completo, email, telefono, direccion, id_tipo_usuario, id_comuna', 'safe', 'on'=>'search'),
+			array('id_usuario,id_estado, username, password, rut, nombre_completo, email, telefono, direccion, id_tipo_usuario, id_comuna', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,6 +63,7 @@ class Usuario extends CActiveRecord
 			'productos' => array(self::HAS_MANY, 'Producto', 'id_usuario'),
 			'idComuna' => array(self::BELONGS_TO, 'Comuna', 'id_comuna'),
 			'idTipoUsuario' => array(self::BELONGS_TO, 'TipoUsuario', 'id_tipo_usuario'),
+                        'estados' => array(self::BELONGS_TO, 'EstadoUsuario', 'id_estado'),
 			'compras' => array(self::HAS_MANY, 'Compra', 'id_compra'),
 
 		);
@@ -77,13 +78,14 @@ class Usuario extends CActiveRecord
 			'id_usuario' => 'Id Usuario',
 			'username' => 'Username',
 			'password' => 'Password',
-			'rut' => 'Rut',
+			'rut' => 'RUT',
 			'nombre_completo' => 'Nombre Completo',
 			'email' => 'Email',
-			'telefono' => 'Telefono',
-			'direccion' => 'Direccion',
-			'id_tipo_usuario' => 'Id Tipo Usuario',
-			'id_comuna' => 'Id Comuna',
+			'telefono' => 'Teléfono',
+			'direccion' => 'Dirección',
+			'id_tipo_usuario' => 'Tipo Usuario',
+			'id_comuna' => 'Comuna',
+                        'id_estado' => 'Estado',
 		);
 	}
 
@@ -115,7 +117,7 @@ class Usuario extends CActiveRecord
 		$criteria->compare('direccion',$this->direccion,true);
 		$criteria->compare('id_tipo_usuario',$this->id_tipo_usuario);
 		$criteria->compare('id_comuna',$this->id_comuna);
-
+                $criteria->compare('id_estado',$this->id_estado);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

@@ -129,7 +129,7 @@ function visibleCliente($id_user_conectado) {
                          ),
                         array('label'=>'Administrar rutas', 'url'=>array('/compra/adminruta'), 'visible' => visible($id_user_conectado)),
 
-
+                        array('label'=>'Usuarios', 'url'=>array('/usuario/admin'), 'visible' => visible($id_user_conectado)),
                         array('label'=>'Listado de Productos', 'url'=>array('/producto/index2'),),
                         array('label'=>'Mis compras', 'url'=>array('/compra/miscompras'),'visible' => visibleProductor($id_user_conectado)||visibleCliente($id_user_conectado)),
 
