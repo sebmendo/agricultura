@@ -26,7 +26,7 @@ class ProductoController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view', 'index2', 'delete', 'indexfiltro', 'addToCart', 'addToCart2', 'detallecarro', 'eliminarproductocarrobyid', 'total', 'adminproductor', 'busqueda', 'vacio', 'busquedafiltro', 'vaciofiltro'),
+                'actions' => array('index', 'view', 'index2', 'delete','delete2','delete3', 'indexfiltro', 'addToCart', 'addToCart2', 'detallecarro', 'eliminarproductocarrobyid', 'total', 'adminproductor', 'busqueda', 'vacio', 'busquedafiltro', 'vaciofiltro'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -51,8 +51,10 @@ class ProductoController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
+                $model2 = Producto::model()->findByPk($id);
+
         $this->render('view', array(
-            'model' => $this->loadModel($id),
+            'model2' => $model2,
         ));
     }
 
@@ -384,9 +386,31 @@ class ProductoController extends Controller {
 
         if (isset($_POST['Producto'])) {
             $model->attributes = $_POST['Producto'];
-
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id_producto));
+            $images = CUploadedFile::getInstancesByName('images');
+             // proceed if the images have been set
+            if (isset($images) && count($images) > 0) {
+                // go through each uploaded image
+                if ($model->save()) {
+                    foreach ($images as $image) {
+                        echo $image->name . '<br />';
+                        if ($image->saveAs(Yii::getPathOfAlias('webroot') . '/images/' . $image->name)) {
+                            // add it to the main model now
+                            $img_add = ImagenProducto::model()->findByPk($model->id_producto);
+                            $img_add->nombre_imagen = $image->name;
+                            $img_add->id_producto = $model->id_producto;
+                            $img_add->save();
+                            echo $img_add->nombre_imagen;
+                        }
+                    }
+                    return $this->redirect(array('view', 'id' => $model->id_producto));
+                }
+            } else {
+                Yii::app()->user->setFlash('error', 'Debe seleccionar una imagen para actualizar el producto');
+                return $this->render('update', array(
+                            'model' => $model,
+                            'categorias' => $categorias,
+                ));
+            }
         }
 
         $this->render('update', array(
@@ -399,17 +423,86 @@ class ProductoController extends Controller {
      * If deletion is successful, the browser will be redirected to the 'admin' page.
      * @param integer $id the ID of the model to be deleted
      */
-    public function actionDelete($id) {
-        if (Yii::app()->request->isPostRequest) {
+    public function actionDelete2($id) {
             // we only allow deletion via POST request
-            $this->loadModel($id)->delete();
+            $model= $this->loadModel($id);
 
-            // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-            if (!isset($_GET['ajax']))
-                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-        } else
-            throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
+            $detalle_compra= DetalleCompra::model()->findAll(array(
+                            'condition' => 'id_producto=:id_producto',
+                            'params' => array(':id_producto' => $model->id_producto),
+                        ));
+
+            $cantidad_compra= count($detalle_compra);
+            if($cantidad_compra==0){
+                 $this->loadModel($id)->delete();
+                 Yii::app()->user->setFlash('success', 'Producto eliminado correctamente');
+              $model = new Producto2('search');
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['Producto2']))
+            $model->attributes = $_GET['Producto2'];
+
+        $this->render('admin2', array(
+            'model' => $model,
+        ));
+
+
+    
+            }else{
+                Yii::app()->user->setFlash('error', 'No es posible eliminar este producto ya que se encuentra registrado en una compra');
+                 $model = new Producto2('search');
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['Producto2']))
+            $model->attributes = $_GET['Producto2'];
+
+        $this->render('admin2', array(
+            'model' => $model,
+        ));
+
+
+            }
+
     }
+
+       public function actionDelete3($id) {
+            // we only allow deletion via POST request
+            $model= $this->loadModel($id);
+
+            $detalle_compra= DetalleCompra::model()->findAll(array(
+                            'condition' => 'id_producto=:id_producto',
+                            'params' => array(':id_producto' => $model->id_producto),
+                        ));
+
+            $cantidad_compra= count($detalle_compra);
+            if($cantidad_compra==0){
+                 $this->loadModel($id)->delete();
+                 Yii::app()->user->setFlash('success', 'Producto eliminado correctamente');
+            $model = new Producto('search');
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['Producto']))
+            $model->attributes = $_GET['Producto'];
+
+        $this->render('admin', array(
+            'model' => $model,
+        ));
+
+    
+            }else{
+                Yii::app()->user->setFlash('error', 'No es posible eliminar este producto ya que se encuentra registrado en una compra');
+            $model = new Producto('search');
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['Producto']))
+            $model->attributes = $_GET['Producto'];
+
+        $this->render('admin', array(
+            'model' => $model,
+        ));
+
+            }
+
+    }
+
+
+
 
     /**
      * Lists all models.

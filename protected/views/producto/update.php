@@ -10,7 +10,15 @@ $this->breadcrumbs=array(
 	'Update',
 );
 ?> 
+<?php if(Yii::app()->user->hasFlash('error')):?>
+    <div class="info">
 
+        <?php
+echo BsHtml::alert(BsHtml::ALERT_COLOR_ERROR, BsHtml::bold('Error!  ') . 'Debe seleccionar una imagen para actualizar el producto');
+?>
+
+    </div>
+<?php endif; ?>
 <?php
 
 echo CHtml::link('Gestionar Productos', array('producto/adminproductor'), array('class'=> 'btn btn-large btn-success')); 
@@ -26,5 +34,5 @@ echo CHtml::link('Gestionar Productos', array('producto/adminproductor'), array(
 
 ?>
 </div>
-<?php echo BsHtml::pageHeader('Editando','Producto '.$model->id_producto) ?>
+<?php echo BsHtml::pageHeader('Editando','Producto ') ?>
 <?php $this->renderPartial('_form', array('model'=>$model,'categorias'=>$categorias)); ?>

@@ -110,17 +110,17 @@ function visibleCliente($id_user_conectado) {
 							array('label'=>'<span class="style" style="background-color:#f9630f;"></span> Style 6', 'url'=>"javascript:chooseStyle('style6', 60)"),
                         )),*/
 						
-						array('label'=>'Mantenedores <span class="caret"></span>', 'url'=>array('/site/page', 'view'=>'columns'),'itemOptions'=>array('class'=>'dropdown','tabindex'=>"-1"),'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>"dropdown"), 
+						array('label'=>'Gestionar <span class="caret"></span>', 'url'=>array('/site/page', 'view'=>'columns'),'itemOptions'=>array('class'=>'dropdown','tabindex'=>"-1"),'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>"dropdown"), 
                         'items'=>array(
                             array('label'=>'Producto', 'url'=>array('/producto/admin')),
 							array('label'=>'Imagen Producto', 'url'=>array('/imagenProducto/admin')),
 							array('label'=>'Valoración Producto', 'url'=>array('/valoralizacionProducto/admin')),
                             array('label'=>'Compras', 'url'=>array('/compra/admin')),
                             array('label'=>'Detalle Compra', 'url'=>array('/detalleCompra/admin')),
-                            array('label'=>'Valoración Compra', 'url'=>array('/valoralizacionCompra/admin')),
+                        //    array('label'=>'Valoración Compra', 'url'=>array('/valoralizacionCompra/admin')),
                             array('label'=>'Usuario', 'url'=>array('/usuario/admin')),
                             array('label'=>'Categoria', 'url'=>array('/categoria/admin')),
-                            array('label'=>'Tipo de usuario', 'url'=>array('/tipoUsuario/admin')),
+                    //        array('label'=>'Tipo de usuario', 'url'=>array('/tipoUsuario/admin')),
                             array('label'=>'Comuna', 'url'=>array('/comuna/admin')),
 
 
@@ -129,17 +129,17 @@ function visibleCliente($id_user_conectado) {
                          ),
                         array('label'=>'Administrar rutas', 'url'=>array('/compra/adminruta'), 'visible' => visible($id_user_conectado)),
 
-                        array('label'=>'Usuarios', 'url'=>array('/usuario/admin'), 'visible' => visible($id_user_conectado)),
-                        array('label'=>'Listado de Productos', 'url'=>array('/producto/index2'),),
+                      //  array('label'=>'Usuarios', 'url'=>array('/usuario/admin'), 'visible' => visible($id_user_conectado)),
+                        array('label'=>'Productos en venta', 'url'=>array('/producto/index2'),),
                         array('label'=>'Mis compras', 'url'=>array('/compra/miscompras'),'visible' => visibleProductor($id_user_conectado)||visibleCliente($id_user_conectado)),
 
                         array('label'=>'Registrar cuenta', 'url'=>array('/usuario/registrar'),'visible'=>Yii::app()->user->isGuest),
                         array('label'=>'Administrar productos', 'url'=>array('/producto/adminproductor'),'visible'=>visibleProductor($id_user_conectado)),
 
-                        array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about'),),
+                        array('label'=>'Acerca de', 'url'=>array('/site/page', 'view'=>'about'),),
                        
-                        array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-                        array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest,'linkOptions'=>array("data-description"=>"member area")),
+                        array('label'=>'Iniciar sesión', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+                        array('label'=>'Cerrar sesión ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
                         
                     ),
                 )); ?>

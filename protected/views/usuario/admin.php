@@ -24,10 +24,11 @@ $('.search-form form').submit(function(){
 
 <h3>Administración de Cuentas de Usuarios</h3>
 
+                              <div class="table-responsive">
 
 
-<?php
-$this->widget('zii.widgets.grid.CGridView', array(
+        <?php $this->widget('bootstrap.widgets.BsGridView',array(
+
     'id' => 'usuario-grid',
     'dataProvider' => $model->search(),
     'filter' => $model,
@@ -54,7 +55,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
             'filter' => CHtml::listData(EstadoUsuario::model()->findAll(), 'id_estado', 'nombre_estado'),
         ),
         'link' => array(
-            'header' => '<h4 style="font-size: 10px">Bloquear/Activar</h4>',
+            'header' => 'Bloquear/<br>Activar',
             'type' => 'raw',
             
             'value' => function($model) {
@@ -65,9 +66,9 @@ $this->widget('zii.widgets.grid.CGridView', array(
                 } 
             }
                 ),
-                array(
-                    'class' => 'CButtonColumn',
-                ),
+                
             ),
         ));
         ?>
+
+</div>

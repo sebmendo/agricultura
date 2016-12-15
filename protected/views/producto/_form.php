@@ -14,7 +14,7 @@
     'enableAjaxValidation'=>false,
 )); ?>
 
-    <p class="help-block">Fields with <span class="required">*</span> are required.</p>
+    <p class="help-block">Los campos con <span class="required">*</span> son requeridos.</p>
 
     <?php echo $form->errorSummary($model); ?>
     <div class="row">
@@ -50,9 +50,9 @@
   <?php 
         $this->widget('CMultiFileUpload', array(
                 'name' => 'images',
-                'accept' => 'jpeg|jpg|png', // useful for verifying files
+                'accept' => 'jpeg|jpg', // useful for verifying files
                 'duplicate' => 'Archivo Ya esta Seleccionado!', // useful, i think
-                'denied' => 'Deben ser Solo imagenes en formato: .jpeg, .jpg o .png', // useful, i think
+                'denied' => 'Deben ser Solo imagenes en formato: .jpeg o .jpg ', // useful, i think
             ));
     ?>
     </div>
@@ -60,6 +60,6 @@
 
   
     <br>
-    <?php echo BsHtml::submitButton('Submit', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
+    <?php echo BsHtml::submitButton('Guardar', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
 
 <?php $this->endWidget(); ?>

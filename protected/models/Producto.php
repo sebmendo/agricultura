@@ -80,8 +80,8 @@ class Producto extends CActiveRecord  implements IECartPosition {
 	{
 		return array(
 			'id_producto' => 'Id Producto',
-			'nombre_producto' => 'Nombre Producto',
-			'precio_producto' => 'Precio Producto',
+			'nombre_producto' => 'Producto',
+			'precio_producto' => 'Precio',
 			'detalle' => 'Detalle',
 			'stock'=>'Stock',
 

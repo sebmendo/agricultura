@@ -224,6 +224,17 @@ _________________________________________________________ -->
                                     <p><?php echo $producto->detalle; ?></p>
                                     <?php echo 'Stock Disponible: ' . $producto->stock; ?>
                                     <br><br>
+
+                                    <?php 
+
+                                    $usuario_vende_producto= Usuario::model()->findByPk($producto->id_usuario);
+                        
+                                    $comuna_ubicacion_producto= Comuna::model()->findByPk($usuario_vende_producto->id_comuna);
+
+                                    echo 'Ubicacion: '. $comuna_ubicacion_producto->nombre_comuna;
+
+                                    ?>
+
                                     <div style="border-top: 1px solid rgba(0,0,0,.125);"></div>
                                     <p>
 

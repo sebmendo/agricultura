@@ -8,6 +8,10 @@ $this->breadcrumbs=array(
 	'Gestionar',
 );
 
+?>
+
+
+<?php 
 
 echo CHtml::link('Crear producto', array('producto/create'), array('class'=> 'btn btn-large btn-success')); 
 Yii::app()->clientScript->registerScript('search', "
@@ -25,15 +29,34 @@ $('.search-form form').submit(function(){
 ?>
 
 <?php echo BsHtml::pageHeader('Gestionar','Productos') ?>
+<?php if(Yii::app()->user->hasFlash('error')):?>
+    <div class="info">
+
+        <?php
+echo BsHtml::alert(BsHtml::ALERT_COLOR_ERROR, BsHtml::bold('Error!  ') . 'No es posible eliminar este producto ya que se encuentra registrado en una compra');
+?>
+
+    </div>
+<?php endif; ?>
+
+<?php if(Yii::app()->user->hasFlash('success')):?>
+    <div class="info">
+
+        <?php
+echo BsHtml::alert(BsHtml::ALERT_COLOR_SUCCESS, BsHtml::bold('Bien!  ') . 'Producto eliminado correctamente');
+?>
+
+    </div>
+<?php endif; ?>
+
+
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title"><?php echo BsHtml::button('Busqueda avanzada',array('class' =>'search-button', 'icon' => BsHtml::GLYPHICON_SEARCH,'color' => BsHtml::BUTTON_COLOR_PRIMARY), '#'); ?></h3>
     </div>
     <div class="panel-body">
         <p>
-            You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>
-                &lt;&gt;</b>
-            or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
+            Tabla resumen de los productos que usted ofrece en nuestra página.
         </p>
 
         <div class="search-form" style="display:none">
@@ -49,14 +72,26 @@ $('.search-form form').submit(function(){
 			'dataProvider'=>$model->search(),
 			'filter'=>$model,
 			'columns'=>array(
-        		'id_producto',
+        		//'id_producto',
 				'nombre_producto',
 				'precio_producto',
 				'detalle',
 				'stock',
 				'Categoria.nombre_categoria',
+				 'link' => array(
+            'header' => 'Eliminar',
+            'type' => 'raw',
+            
+             'value' => function($model) {
+                    return CHtml::link("<center><i class='fa fa-trash-o' style='font-size: 20px' title='Eliminar'></i></center>",array('delete2', 'id' => $model->id_producto));
+               
+                 }
+		),
+
 				array(
 					'class'=>'bootstrap.widgets.BsButtonColumn',
+					            'template'=>'{update}{view}',
+
 				),
 			),
         )); ?>

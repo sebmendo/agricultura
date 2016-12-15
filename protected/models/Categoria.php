@@ -55,7 +55,7 @@ class Categoria extends CActiveRecord
 	{
 		return array(
 			'id_categoria' => 'Id Categoria',
-			'nombre_categoria' => 'Nombre Categoria',
+			'nombre_categoria' => 'Categoria',
 		);
 	}
 

@@ -1,9 +1,9 @@
         <div class="page-header">
-        <h1>About us <small> everything you need to know</small></h1>
+        <h1>Acerca de nosotros <small> Conocenos</small></h1>
         </div>
 	<div class="row-fluid">
      <div class="span12">
-     	<h3 class="header">Our team
+     	<h3 class="header">Nuestro equipo
         	<span class="header-line"></span> 
         </h3>
       
@@ -13,9 +13,11 @@
             <div class="colored_banner thumb-content-dark">
             <img src="<?php echo Yii::app()->theme->baseUrl;?>/img/simpson2.jpg" width="260" height="180" alt="Me" />
             <h3>
-            Nelson Figueroa - <small>Jefe de proyecto yii</small>
+            Nelson Figueroa - <small>Tester yii</small>
             </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+
+            </p>
             
             <div><img src="<?php echo Yii::app()->theme->baseUrl;?>/img/icons/social/facebook.png"  alt="Facebook" /> <img src="<?php echo Yii::app()->theme->baseUrl;?>/img/icons/social/twitter.png"  alt="Twitter" /> <img src="<?php echo Yii::app()->theme->baseUrl;?>/img/icons/social/linkedin.png"  alt="LinkedIn" /> <img src="<?php echo Yii::app()->theme->baseUrl;?>/img/icons/social/google.png"  alt="Google+" /> <img src="<?php echo Yii::app()->theme->baseUrl;?>/img/icons/social/email.png"  alt="RSS" /></div>
             

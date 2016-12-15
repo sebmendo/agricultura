@@ -9,11 +9,10 @@ $this->breadcrumbs=array(
 	'Create',
 );
 
-echo CHtml::link('Gestionar Productos', array('producto/adminproductor'), array('class'=> 'btn btn-large btn-success')); 
-
+ 
 ?>
 
-<?php echo BsHtml::pageHeader('Create','Producto') ?>
+<?php echo BsHtml::pageHeader('Registrar','Producto') ?>
 
 
   <?php if(Yii::app()->user->hasFlash('error')):?>

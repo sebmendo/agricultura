@@ -11,50 +11,50 @@
     
     <div class="shout-box">
         <div class="shout-text">
-          <h1>Greatest website ever</h1>
-          <p>We work very hard to bring you the best website themes.<br> All our themes are responsive and look great on any device.</p>
+          <h1>El mejor sitio para vender tus productos y distribuirlos en todo Ñuble</h1>
+          <p>Distribuimos los productos que tú vendes a cambio de una comisión.<br> Los compradores por un precio bajo y con nuestra previa certificación recibirán sus productos en su hogar cancelando el costo de distribución.</p>
         </div>
     </div>
     	<div class="row-fluid">
             <ul class="thumbnails center">
               <li class="span3">
                 <div class="thumbnail">
-                <h3>Works on all devices</h3>
+                <h3>Compra donde sea</h3>
                   
                   	<div class="round_background r-grey-light">
                 		<img src="<?php echo Yii::app()->theme->baseUrl;?>/img/icons/smashing/30px-01.png" alt="" class="">
                      </div>
                   
-                  <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+                  <p>Podrás efectuar compras mediante tu telefono movil.</p>
                 </div>
               </li>
               <li class="span3">
                 <div class="thumbnail">
-                	 <h3>Unlimited color options</h3>
+                	 <h3>Distribuimos a bajo costo</h3>
                      
                      <div class="round_background r-yellow">
                 		<img src="<?php echo Yii::app()->theme->baseUrl;?>/img/icons/smashing/30px-41.png" alt="" class="">
                      </div>
                  
-                  <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+                  <p>Por un bajo costo recibirás tus productos.</p>
                 </div>
               </li>
               <li class="span3">
                 <div class="thumbnail">
-                	<h3>6 home layouts</h3>
+                	<h3>Certificamos</h3>
                   	<div class="round_background r-grey-light">
                 		<img src="<?php echo Yii::app()->theme->baseUrl;?>/img/icons/smashing/30px-37.png" alt="" class="">
                      </div>
-                  <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+                  <p>Certificamos la calidad de los productos siendo el mejor intermediario del mercado.</p>
                 </div>
               </li>
               <li class="span3">
                 <div class="thumbnail">
-                  <h3>More than 500 fonts</h3>
+                  <h3>Vende</h3>
                   <div class="round_background r-yellow">
                 		<img src="<?php echo Yii::app()->theme->baseUrl;?>/img/icons/smashing/30px-17.png" alt="" class="">
                      </div>
-                  <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+                  <p>Vende tus productos por tan solo una comisión del 10%.</p>
                 </div>
               </li>
 
